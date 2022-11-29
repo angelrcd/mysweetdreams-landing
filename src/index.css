@@ -1,10 +1,11 @@
+/* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
   font-family: bluetea;
-  src: url(../fonts/Bluetea.ttf);
+  src: url("../fonts/Bluetea.ttf");
 }
 
 @font-face {
