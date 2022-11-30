@@ -12,92 +12,71 @@
 
 <body class="bg-fixed h-screen bg-cover bg-[url('/img/background-night.jpg')]">
   <div class="flex flex-col h-screen justify-between">
-    <nav class="flex px-14 justify-between py-4">
-      <a href="">
-        <div class='flex items-center gap-6 '>
-          <img class='h-[100px]' src="/img/logo.png" alt="logo">
-          <h1 class="text-shadow-2 text-white font-bluetea text-6xl">SWEETDREAMS</h1>
-        </div>
-      </a>
-      <ul
-        class=' justify-self-end flex gap-5 text-2xl font-quicksand text-white text-shadow-1a items-center font-semibold text-shadow-1'>
-        <li class='hover:text-web-boton duration-300 ease-in-out'>
-          <Link to='/Login'>Iniciar sesión</Link>
-        </li>
-        <li class='hover:text-web-boton duration-300 ease-in-out'>
-          <Link to='/Signup'>Registrarse</Link>
-        </li>
-        <li class='hover:text-web-boton duration-300 ease-in-out'>
-          <Link to='/Who'>Quienes somos</Link>
-        </li>
-      </ul>
-    </nav>
 
-    <main class="bg-fixed h-fit bg-cover bg-[url('/img/background-night.jpg')] flex flex-col justify-between">
-      <div class="text-shadow-1 text-white font-quicksand w-[1200px] px-28">
-        <h2 class='text-5xl font-bold mt-36'>Aprende a dormir mejor</h2>
-        <p class='text-2xl pt-4 font-semibold'>¡Sweetdreams te ayuda a registrar y analizar tus horarios de sueño,
-          para ayudarte a sentir mejor y mas descansado!
-        </p>
-        <button
-          class="mt-36 text-black font-quicksand font-bold w-fit px-10 py-2 text-3xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-full mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton">COMENZAR
-          YA</button>
-      </div>
+    <main class="flex flex-col justify-between">
+      <nav class="flex justify-between h-10 md:h-20 px-4 md:bg-transparent bg-white dark:bg-web-formBgDarkMode">       
+        <a class="flex items-center gap-5 ml-4" href="">
+          <img class="h-[40px] md:h-[70px]" src="/img/logo.png" alt="logo">
+          <h1 class="hidden min-[400px]:block md:hidden xl:block md:text-3xl w-full text-shadow-1 lg:text-shadow-2 text-white font-bluetea">MYSWEETDREAMS</h1>
+        </a>
+        <img class="md:hidden cursor-pointer my-auto h-[30px] filter dark:invert" src="/icons/menu.svg" alt="">
+        <ul class="hidden md:flex text-2xl text-shadow-1 font-semibold text-white">
+          <li class="pr-3 py-3 pl-0 hover:text-web-boton duration-300 ease-in-out">Iniciar sesión</li>
+          <li class="p-3 hover:text-web-boton duration-300 ease-in-out">Registrate</li>
+          <li class="p-3 hover:text-web-boton duration-300 ease-in-out">Quienes somos</li>
+        </ul>
+      </nav>
     </main>
+    <div class="text-shadow-1 text-white font-semibold font-quicksand px-4 sm:px-8 md:px-14 lg:px-16 xl:px-20 2xl:px-24">
+      <h2 class=" mb-3 text-2xl md:text-4xl lg:text-5xl">Aprende a dormir mejor</h2>
+      <p class="sm:text-xl sm:w-[500px] md:w-[600px] xl:w-[900px] lg:text-2xl">¡Sweetdreams te ayuda a registrar y analizar tus horarios de sueño,
+        para ayudarte a sentir mejor y mas descansado!</p>
+    </div>
 
-    <div class="custom-shape-divider-bottom-1669113248">
+    <button class="button-web mx-auto mt-5 sm:mx-10 md:mx-20 lg:mx-48">COMENZAR YA</button>
+
+    <div class="custom-shape-divider-bottom-1669113248 opacity-95">
       <img class="w-full h-14" src="/img/wavesOpacity.svg" alt="">
     </div>
   </div>
 
-  <div id="info" class="description-body h-auto flex flex-col justify-center bg-slate-300">
-    <div class="px-56">
-      <h3 class="border-b-4 border-black py-16 px-44 text-4xl text-center font-semibold">Una experiencia personalizada
-        para que duermas
-        mejor
-        durante la
-        noche y
-        estes mas
-        despierto durante el día
-      </h3>
-    </div>
+  <div id="info" class="description-body h-auto flex flex-col justify-center bg-slate-300 dark:bg-web-formBgDarkMode dark:text-gray-100 opacity-95">
     <div class="py-16 flex justify-around flex-wrap">
       <div class="w-36 flex flex-col gap-4 mx-20 mb-10">
-        <img class="h-20" src="/icons/monitor-tv.svg" alt="" />
+        <img class="h-20 filter dark:invert" src="/icons/monitor-tv.svg" alt="" />
         <h4 class="text-2xl text-center font-bold">Experiencia personalizada</h4>
-        <p class="text-center text-gray-600">Nos adaptamos a cada usuario para proporcionar una informacion unica</p>
+        <p class="text-center text-gray-600 dark:text-gray-100">Nos adaptamos a cada usuario para proporcionar una informacion unica</p>
       </div>
 
       <div class="w-36 flex flex-col gap-4 mx-20 mb-10">
-        <img class="h-20" src="/icons/world.svg" alt="" />
+        <img class="h-20 filter dark:invert" src="/icons/world.svg" alt="" />
         <h4 class="text-2xl text-center font-bold">Todo en uno</h4>
-        <p class="text-center text-gray-600">Desde nuestra aplicación podras introducir, gestionar y visualizar todos
+        <p class="text-center text-gray-600 dark:text-gray-100">Desde nuestra aplicación podras introducir, gestionar y visualizar todos
           tus
           datos y recomendaciones</p>
       </div>
 
       <div class="w-36 flex flex-col gap-4 mx-20 mb-10">
-        <img class="h-20" src="/icons/shield.svg" alt="" />
+        <img class="h-20 filter dark:invert" src="/icons/shield.svg" alt="" />
         <h4 class="text-2xl text-center font-bold">Segura y eficaz</h4>
-        <p class="text-center text-gray-600">Tus datos estan protegidos frente a terceros</p>
+        <p class="text-center text-gray-600 dark:text-gray-100">Tus datos estan protegidos frente a terceros</p>
       </div>
     </div>
-    <div class='flex justify-center'><button
-        class="text-black font-quicksand font-bold w-fit px-10 py-2 text-3xl bg-web-boton hover:bg-web-boton2 hover:text-white rounded-full mb-10 shadow-lg duration-500 ease-in-out hover:resize hover:ring-2 ring-offset-4 hover:scale-105 ring-web-boton">COMENZAR
-        YA</button></div>
+    <button class="button-web mx-auto text-black">COMENZAR YA</button>
   </div>
 
-  <footer class="h-fit flex justify-end font-caveat bg-white">
-    <div class="h-full">
-      <div class="flex flex-row-reverse gap-8 pt-3">
-        <img class="social h-8 mr-20 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/instagram.svg"
-          alt="" />
-        <img class="social h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/twitter.svg"
-          alt="" />
-        <img class="social h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/facebook.svg"
-          alt="" />
+  <footer class="h-fit flex justify-end font-caveat bg-white dark:bg-gray-900 dark:text-gray-100">
+    <div class="flex flex-wrap gap-3 lg:gap-8 items-center justify-center py-1 lg:py-3">
+      <p class="text-center text-xl lg:text-2xl">Contáctanos</p>
+      <div class="flex flex-row-reverse gap-4 px-5">
+        <img class="filter dark:invert h-4 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/instagram.svg"
+          alt="logo instagram" />
+        <img class="filter dark:invert h-4 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/twitter.svg"
+          alt="logo twitter" />
+        <img class="filter dark:invert h-4 lg:h-8 cursor-pointer hover:scale-105 duration-500 ease-in-out" src="/icons/facebook.svg"
+          alt="logo facebook" />
       </div>
-      <p class=" mr-20 text-center text-2xl">Contáctanos</p>
+      
     </div>
   </footer>
 </body>
