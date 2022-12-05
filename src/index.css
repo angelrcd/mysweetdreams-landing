@@ -117,6 +117,14 @@ h6 {
   .menu-closed {
     @apply fixed right-[-100%] top-0 w-[300px] h-screen flex flex-col duration-500 z-20;
   }
+
+  .nav-visible {
+    @apply fixed duration-300;
+  }
+
+  .nav-not-visible {
+    @apply fixed translate-y-[-100%] duration-300;
+  }
 }
 
 .custom-shape-divider-bottom-1669113248 {

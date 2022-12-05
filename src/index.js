@@ -2,6 +2,7 @@ const menu = document.querySelector(".menu");
 const focusWindow = document.querySelector(".focus-window");
 const menuButton = document.querySelector(".menu-button");
 const closeMenuButton = document.querySelector(".close-menu-button");
+const navbar = document.querySelector(".navbar");
 
 function swapMenuOpenClosed() {
   if (menu.classList.contains("menu-open")) {
@@ -21,6 +22,16 @@ function swapFocusUnfocused() {
     focusWindow.classList.remove("web-out-of-focus");
     focusWindow.classList.add("web-in-focus");
   }
+}
+
+function setNavVisible() {
+  navbar.classList.remove("nav-not-visible");
+  navbar.classList.add("nav-visible");
+}
+
+function setNavNotVisible() {
+  navbar.classList.remove("nav-visible");
+  navbar.classList.add("nav-not-visible");
 }
 
 // left: 37, up: 38, right: 39, down: 40,
@@ -82,3 +93,14 @@ focusWindow.addEventListener("click", () => {
   swapFocusUnfocused();
   enableScroll();
 });
+
+let lastScrollTop = 0;
+window.addEventListener("scroll", function() { // or window.addEventListener("scroll"....
+  const st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+  if (st > lastScrollTop) {
+    setNavNotVisible();
+  } else {
+    setNavVisible();
+  }
+  lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
