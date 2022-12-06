@@ -37,9 +37,14 @@ function setNavNotVisible() {
 
 function setDesktopNavBackground(scrollYPosition) {
   if (scrollYPosition > 50) {
-    navbar.classList.remove("md:bg-transparent");
+    setTimeout(() => {
+      navbar.classList.remove("md:bg-transparent");
+    }, 300);
   } else {
-    navbar.classList.add("md:bg-transparent");
+    setTimeout(() => {
+      navbar.classList.add("md:bg-transparent");
+      navbar.classList.add("duration-500");
+    }, 300);
   }
 }
 
