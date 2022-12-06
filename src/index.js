@@ -2,7 +2,8 @@ const menu = document.querySelector(".menu");
 const focusWindow = document.querySelector(".focus-window");
 const menuButton = document.querySelector(".menu-button");
 const closeMenuButton = document.querySelector(".close-menu-button");
-const navbar = document.querySelector(".navbar");
+const navbarWrapper = document.querySelector(".navbar");
+const navbar = document.querySelector("nav");
 
 function swapMenuOpenClosed() {
   if (menu.classList.contains("menu-open")) {
@@ -25,13 +26,21 @@ function swapFocusUnfocused() {
 }
 
 function setNavVisible() {
-  navbar.classList.remove("nav-not-visible");
-  navbar.classList.add("nav-visible");
+  navbarWrapper.classList.remove("nav-not-visible");
+  navbarWrapper.classList.add("nav-visible");
 }
 
 function setNavNotVisible() {
-  navbar.classList.remove("nav-visible");
-  navbar.classList.add("nav-not-visible");
+  navbarWrapper.classList.remove("nav-visible");
+  navbarWrapper.classList.add("nav-not-visible");
+}
+
+function setDesktopNavBackground(scrollYPosition) {
+  if (scrollYPosition > 50) {
+    navbar.classList.remove("md:bg-transparent");
+  } else {
+    navbar.classList.add("md:bg-transparent");
+  }
 }
 
 // left: 37, up: 38, right: 39, down: 40,
@@ -95,8 +104,11 @@ focusWindow.addEventListener("click", () => {
 });
 
 let lastScrollTop = 0;
-window.addEventListener("scroll", function() { // or window.addEventListener("scroll"....
+window.addEventListener("scroll", function() {
+  // or window.addEventListener("scroll"....
   const st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+  setDesktopNavBackground(st);
+  console.log(st);
   if (st > lastScrollTop) {
     setNavNotVisible();
   } else {
