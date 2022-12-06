@@ -4,6 +4,8 @@ const menuButton = document.querySelector(".menu-button");
 const closeMenuButton = document.querySelector(".close-menu-button");
 const navbarWrapper = document.querySelector(".navbar");
 const navbar = document.querySelector("nav");
+const logo = document.querySelector(".logo");
+const navTitle = document.querySelector(".nav-title");
 
 function swapMenuOpenClosed() {
   if (menu.classList.contains("menu-open")) {
@@ -39,11 +41,21 @@ function setDesktopNavBackground(scrollYPosition) {
   if (scrollYPosition > 50) {
     setTimeout(() => {
       navbar.classList.remove("md:bg-transparent");
+      navbar.classList.add("md:bg-web-fondo");
+      navbar.classList.add("md:dark:bg-web-formBgDarkMode");
+      navbar.classList.remove("md:h-20");
+      navTitle.classList.add("md:text-xl");
+      logo.classList.remove("md:h-[70px]");
     }, 300);
   } else {
     setTimeout(() => {
+      navbar.classList.remove("md:bg-web-fondo");
       navbar.classList.add("md:bg-transparent");
+      navbar.classList.remove("md:dark:bg-web-formBgDarkMode");
       navbar.classList.add("duration-500");
+      navbar.classList.add("md:h-20");
+      navTitle.classList.remove("md:text-xl");
+      logo.classList.add("md:h-[70px]");
     }, 300);
   }
 }
