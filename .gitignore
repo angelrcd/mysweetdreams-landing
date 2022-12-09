@@ -1,3 +1,5 @@
+#backup directory
+backup_dist
 # Logs
 logs
 *.log
