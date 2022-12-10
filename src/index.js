@@ -42,7 +42,7 @@ function setDesktopNavBackground(scrollYPosition) {
   if (scrollYPosition > 0) {
     setTimeout(() => {
       navbar.classList.remove("md:bg-transparent", "md:h-20");
-      navbar.classList.add("md:bg-web-fondo", "md:dark:bg-web-formBgDarkMode", "md:border-gray-400");
+      navbar.classList.add("md:bg-gray-200", "md:dark:bg-web-formBgDarkMode", "md:border-gray-400");
       navTitle.classList.add("md:text-xl", "text-gray-900", "dark:text-gray-200");
       navTitle.classList.remove("text-shadow-1", "lg:text-shadow-2");
       logo.classList.remove("md:h-[70px]");
@@ -54,7 +54,7 @@ function setDesktopNavBackground(scrollYPosition) {
   } else {
     setTimeout(() => {
       navbar.classList.add("md:bg-transparent");
-      navbar.classList.remove("md:bg-web-fondo");
+      navbar.classList.remove("md:bg-gray-200");
       navbar.classList.remove("md:dark:bg-web-formBgDarkMode");
       navbar.classList.remove("md:border-gray-400");
       navbar.classList.remove("md:dark:border-gray-400");
