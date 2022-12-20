@@ -6,6 +6,7 @@ const navbarWrapper = document.querySelector(".navbar");
 const navbar = document.querySelector("nav");
 const logo = document.querySelector(".logo");
 const navTitle = document.querySelector(".nav-title");
+const navButtons = document.querySelectorAll(".nav-button");
 
 function swapMenuOpenClosed() {
   if (menu.classList.contains("menu-open")) {
@@ -38,25 +39,27 @@ function setNavNotVisible() {
 }
 
 function setDesktopNavBackground(scrollYPosition) {
-  if (scrollYPosition > 50) {
-    setTimeout(() => {
-      navbar.classList.remove("md:bg-transparent");
-      navbar.classList.add("md:bg-web-fondo");
-      navbar.classList.add("md:dark:bg-web-formBgDarkMode");
-      navbar.classList.remove("md:h-20");
-      navTitle.classList.add("md:text-xl");
-      logo.classList.remove("md:h-[70px]");
-    }, 300);
+  if (scrollYPosition > 0) {
+    navbar.classList.remove("md:bg-transparent", "md:h-20");
+    navbar.classList.add("md:bg-gray-200", "md:dark:bg-web-formBgDarkMode", "md:border-gray-400");
+    navTitle.classList.add("md:text-xl", "text-gray-900", "dark:text-gray-200");
+    navTitle.classList.remove("text-shadow-1", "lg:text-shadow-2");
+    logo.classList.remove("md:h-[70px]");
+    navButtons.forEach(navButton => {
+      navButton.classList.add("text-gray-900", "dark:text-gray-200", "text-lg");
+      navButton.classList.remove("text-shadow-1");
+    });
   } else {
-    setTimeout(() => {
-      navbar.classList.remove("md:bg-web-fondo");
-      navbar.classList.add("md:bg-transparent");
-      navbar.classList.remove("md:dark:bg-web-formBgDarkMode");
-      navbar.classList.add("duration-500");
-      navbar.classList.add("md:h-20");
-      navTitle.classList.remove("md:text-xl");
-      logo.classList.add("md:h-[70px]");
-    }, 300);
+    navbar.classList.add("duration-300");
+    navbar.classList.add("md:bg-transparent", "md:h-20");
+    navbar.classList.remove("md:bg-gray-200", "md:dark:bg-web-formBgDarkMode", "md:border-gray-400");
+    navTitle.classList.remove("md:text-xl", "text-gray-900", "dark:text-gray-200");
+    navTitle.classList.add("text-shadow-1", "lg:text-shadow-2");
+    logo.classList.add("md:h-[70px]");
+    navButtons.forEach(navButton => {
+      navButton.classList.remove("text-gray-900", "dark:text-gray-200", "text-lg");
+      navButton.classList.add("text-shadow-1");
+    });
   }
 }
 
